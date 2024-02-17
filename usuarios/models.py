@@ -18,11 +18,13 @@ class Usuarios(models.Model):
     direccion = models.CharField(
         max_length=254,
         verbose_name='Dirección',
+        null=True,
+        blank=True
     )
     tipo = models.CharField(
         max_length=25,
         choices=TIPO,
-        default='vendedores',
+        default='vendedor',
         verbose_name='Tipo'
     )
     ciudad = models.CharField(
@@ -37,8 +39,9 @@ class Usuarios(models.Model):
     cargo = models.CharField(
         max_length=25,
         choices=CARGO,
-        default='asesor',
-        verbose_name='Cargo'
+        verbose_name='Cargo',
+        blank=True,
+        null=True
     )
 
     class Meta:

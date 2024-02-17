@@ -1,8 +1,8 @@
 
 
 TIPO = (
-    ('vendedores', 'Vendedores'),
-    ('compradores', 'Compradores')
+    ('vendedor', 'Vendedor'),
+    ('comprador', 'Comprador')
 )
 
 CARGO = (
