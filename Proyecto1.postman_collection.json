@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "b701129e-80a8-428a-8ae0-2e2d3c5d4866",
+		"name": "Proyecto1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12418587"
+	},
+	"item": [
+		{
+			"name": "OAuth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pbkdf2_sha256$600000$uKOGHLJV4DnV64Ws8v9jxQ$0bx4lNin8doAR8HxNclkEkxeSVvXVy21pqud5rArfck=",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cBt48DwRgipSAhyA3aPvIpAoSuHiqvgreerQEDyt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin2024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/o/token/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"o",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "aweWXzE6WbVdH7aBtcEzJ9W0P8BEXS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/eliminar/10/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"eliminar",
+						"10",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "geocodificar_base",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "crear",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "aweWXzE6WbVdH7aBtcEzJ9W0P8BEXS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "usuario prueba",
+							"type": "text"
+						},
+						{
+							"key": "apellido",
+							"value": "apellido prueba",
+							"type": "text"
+						},
+						{
+							"key": "ciudad",
+							"value": "bogota",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "vendedor",
+							"type": "text"
+						},
+						{
+							"key": "cargo",
+							"value": "cajero",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/crear/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"crear",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
