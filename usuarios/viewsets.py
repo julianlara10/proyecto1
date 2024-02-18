@@ -88,9 +88,11 @@ class UsuariosGeoViewset(viewsets.ModelViewSet):
                 longitud = geocode_result[0]['geometry']['location']['lng']
                 item['latitud'] = latitud
                 item['longitud'] = longitud
+                item['estado_geo'] = True
                 instancia = queryset.filter(pk=item['id']).first()
                 instancia.longitud = longitud
                 instancia.latitud = latitud
+                instancia.estado_geo = True
                 instancia.save()
             return Response(data, status=status.HTTP_200_OK)
         except Exception as e:
