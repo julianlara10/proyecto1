@@ -1,4 +1,4 @@
-
+import googlemaps
 
 TIPO = (
     ('vendedor', 'Vendedor'),

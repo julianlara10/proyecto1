@@ -31,8 +31,8 @@ class Usuarios(models.Model):
         max_length=150,
         verbose_name='Ciudad'
     )
-    longitud = models.FloatField()
-    latitud = models.FloatField()
+    longitud = models.FloatField(blank=True, null=True)
+    latitud = models.FloatField(blank=True, null=True)
     estado_geo = models.BooleanField(
         default=False,
     )

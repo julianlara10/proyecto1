@@ -7,4 +7,16 @@ from usuarios.models import Usuarios
 
 @admin.register(Usuarios)
 class usuariosAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        'id',
+        'nombre',
+        'apellido',
+        'direccion',
+        'tipo',
+        'ciudad',
+        'latitud',
+        'longitud',
+        'estado_geo',
+        'cargo'
+    )
+    list_display_links = ('id',)
