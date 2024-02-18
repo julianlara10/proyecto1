@@ -1,3 +1,4 @@
 # Ignorar el directorio pycache y .idea
 pycache/
 .idea/
+__pycache__
