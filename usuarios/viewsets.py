@@ -1,5 +1,6 @@
 from django.db.models import Q
-from rest_framework import viewsets, serializers, status
+from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope
+from rest_framework import viewsets, serializers, status, permissions
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
@@ -9,15 +10,11 @@ from usuarios.serializers import UsuariosSerializer
 import googlemaps
 
 
-
-
 class UsuariosListaViewset(viewsets.ModelViewSet):
 
     queryset = Usuarios.objects.all()
     serializer_class = UsuariosSerializer
-    permission_classes = (
-        AllowAny,
-    )
+    permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
     http_method_names = ('get',)
     ordering = ('pk',)
     ordering_fields = ('pk',)
@@ -27,9 +24,7 @@ class UsuariosCrearViewset(viewsets.ModelViewSet):
 
     queryset = Usuarios.objects.all()
     serializer_class = UsuariosSerializer
-    permission_classes = (
-        AllowAny,
-    )
+    permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
     http_method_names = ('post',)
     ordering = ('pk',)
     ordering_fields = ('pk',)
@@ -51,9 +46,7 @@ class UsuariosUsuarioViewset(viewsets.ModelViewSet):
 
     queryset = Usuarios.objects.all()
     serializer_class = UsuariosSerializer
-    permission_classes = (
-        AllowAny,
-    )
+    permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
     http_method_names = ('get',)
     ordering = ('pk',)
     ordering_fields = ('pk',)
@@ -66,9 +59,7 @@ class UsuariosEliminarViewset(viewsets.ModelViewSet):
 
     queryset = Usuarios.objects.all()
     serializer_class = UsuariosSerializer
-    permission_classes = (
-        AllowAny,
-    )
+    permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
     http_method_names = ('delete',)
     ordering = ('pk',)
     ordering_fields = ('pk',)
@@ -78,9 +69,7 @@ class UsuariosGeoViewset(viewsets.ModelViewSet):
 
     queryset = Usuarios.objects.filter(tipo='comprador').exclude(Q(latitud__isnull=False) & Q(longitud__isnull=False))
     serializer_class = UsuariosSerializer
-    permission_classes = (
-        AllowAny,
-    )
+    permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
     http_method_names = ('get',)
     ordering = ('pk',)
     ordering_fields = ('pk',)
